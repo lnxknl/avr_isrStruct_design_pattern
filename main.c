@@ -486,7 +486,7 @@ const char cmdGetPortUsage[] PROGMEM   = "Get Port:    GP addr";
 const char cmdSetPortUsage[] PROGMEM   = "Set Port:    SP addr value";
 const char cmdGetResultUsage[] PROGMEM = "Get Result:  GR index";
 const char cmdGetStatusUsage[] PROGMEM = "Get Status:  GS";
-const char cmdGetStackUsage[] PROGMEM  = "Get Stack:   GZ";
+const char cmdGetStackUsage[] PROGMEM  = "Get Stack:   GZ";// @NOTE 
 const char cmdRstAllUsage[] PROGMEM    = "Rst All:     R";
 
 void dmaRead(uint8_t section, uint16_t src, uint16_t dst, uint16_t len)
@@ -508,7 +508,7 @@ void dmaRead(uint8_t section, uint16_t src, uint16_t dst, uint16_t len)
 	sei();
 }
 
-int main()
+int main()// @NOTE 
 {
 	const struct
 	{
@@ -583,7 +583,7 @@ int main()
 		{
 			if(strcmp(argv[0], "?") == 0)
 			{
-				for(i = 0; i < sizeof(cmds) / sizeof(*cmds); ++i)
+				for(i = 0; i < sizeof(cmds) / sizeof(*cmds); ++i)// @NOTE 
 					printf_P(PSTR("%S\n"), cmds[i].usage);
 				continue;
 			}
